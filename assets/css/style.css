@@ -929,7 +929,8 @@ a:focus.service-btn{
 	margin-top: -70px;
 }
 .single-team-box{
-	position: relative;
+	min-width: 15vw;
+    position: relative;
 	height: 352px;
 	background-size: cover;
 	background-position: center;
@@ -941,10 +942,16 @@ a:focus.service-btn{
 /*team-box-bg*/
 
 .team-box-bg-1{
-    background-image: url(../../assets/images/team/team.jpg);
+    background-image: url(../../assets/images/team/ben_zhou.jpg);
 }
 .team-box-bg-2{
-    background-image: url(../../assets/images/team/team3.jpg);
+    background-image: url(../../assets/images/team/reed_graff.jpg);
+}
+.team-box-bg-3{
+    background-image: url(../../assets/images/team/ansel_sanders.jpg);
+}
+.team-box-bg-4{
+    background-image: url(../../assets/images/team/bill_robertson.jpg);
 }
 
 
@@ -1231,6 +1238,8 @@ a:active.learn-btn{
     -o-transition: .5s;
     transition: .5s;
 
+    background-color: white;
+
 }
 .single-news-box.news-mb-20{
 	margin-bottom:20px;
@@ -1288,7 +1297,7 @@ a:active.learn-btn{
 }
 
 .news-box-inner span{
-	color:#908edf;
+	color:white;
 
 }
 a.learn-btn,
@@ -1310,7 +1319,7 @@ a:active.learn-btn{
     transition: 0.5s ease-in-out;
 }
 .single-news-box:hover .news-box-inner {
-	background: #f9faff;
+	background: white;
 	
 }/*team-box-inner*/
 .single-news-box:hover{
@@ -2341,11 +2350,24 @@ a:active.learn-btn{
 }
 
 .footer_row {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10vw;
+}
+
+.team_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }
 
 .no_decor {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.no_decor:hover {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
@@ -2359,4 +2381,18 @@ a:active.learn-btn{
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 800px) {
+    .footer_row {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+
+    .team_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
 }
