@@ -2,7 +2,9 @@
 var try_num = 1
 var delayInMilliseconds = 500;
 
-
+const Default_Headers = new Headers({
+    "Content-Type": "text/plain",
+});
 
 
 
@@ -17,67 +19,51 @@ var Imported_Data = {
         "data": null
     },
     "IG": {
-        "url": "https://script.google.com/macros/s/AKfycbzv9xghckHaLccdSatUqdAoDYSr5VEaJi_FtCr-yEAdV2m1gqSSR2jnxrDHuMmIQ-os/exec",
+        //"url": "../../php/proxy.php",
+        "url": "http://localhost:3000/assets/php/proxy.php",
         "data": null
     }
 }
 
-function is_finished() {
-    for (var key in Imported_Data) {
-        console.log(Imported_Data[key]["data"])
-        return false;
-        /*
-        if (typeof Imported_Data[key]["data"] == Promise || typeof Imported_Data[key]["data"] == null) {
-            return false;
-        }
-        */
-    }
-    return true;
-}
-
-function fetch_data(url, key, last = false) {
-    console.log(last);
-    fetch(url)
+function fetch_data(url, data_key, last = false) {
+    fetch(url, {
+        mode: "cors"
+    })
     .then(response => {
         if (response.ok) {
             return response.json();
         } else if(response.status === 404) {
-            return Promise.reject('error 404');
+            return Promise.reject("error 404");
         } else {
-            return Promise.reject('some other error: ' + response.status);
+            return Promise.reject("some other error: " + response.status);
         }
     })
     .then(data => {
-        Imported_Data[key]["data"] = data;
-    })
-    .then(() => {
-        if (!(is_finished() || last)) {
+        Imported_Data[data_key]["data"] = data;
+        if (last) {
             main(Imported_Data);
         }
     })
-    //.catch(error => console.log(error));
+    .catch(error => console.log(error));
 }
 
 function start() {
     var keys = Object.keys(Imported_Data);
     
     for (var key in keys) {
-        this_try_num = try_num;
+        /*
+        setTimeout(function() {
+
+        }, delayInMilliseconds);
+        */
+        var pass_key = keys[key];
         
-        while (this_try_num > 0) {
-            if (this_try_num == 1 && keys.indexOf(keys[key]) == keys.length - 1) {
-                setTimeout(function() {
-                    fetch_data(Imported_Data[keys[key]]["url"], keys[key], last = true);
-                }, delayInMilliseconds);
-                
-            } else {
-                setTimeout(function() {
-                    fetch_data(Imported_Data[keys[key]]["url"], keys[key]);
-                }, delayInMilliseconds);
+        if (keys.indexOf(pass_key) == keys.length - 1) {
+            fetch_data(Imported_Data[pass_key]["url"], pass_key, last = true);
+            
+        } else {
+            fetch_data(Imported_Data[pass_key]["url"], pass_key);
 
-            }
-
-            this_try_num -= 1;
         }
     }
 }
@@ -92,7 +78,11 @@ function main(data) {
     
     
     //// Mutator Calls ////
-    document.getElementsByClassName("counter")[0].innerText = Age_Of_Club();
+    document.getElementById("days_founded").innerText = Age_Of_Club();
+    document.getElementById("instagram_followers").innerText = Instagram_Follower_Count();
+    document.getElementById("instagram_posts").innerText = Instagram_Post_Count();
+    // IG.data.graphql.user.edge_followed_by.count
+    //document.getElementsByClassName("counter")[0].innerText = Age_Of_Club();
 }
 
 
@@ -104,6 +94,8 @@ function main(data) {
 
 // Calculate the age of the club:
 function Age_Of_Club() {
+    // TODO, change the date
+    
     var date1 = new Date("11/1/2020"); // Date Format = (MM/DD/YYYY)
     var date2 = new Date();
         
@@ -118,9 +110,14 @@ function Age_Of_Club() {
 }
 
 // Find number of IG posts:
-function Instagram_Post_Count() {
-    
+function Instagram_Follower_Count() {
+    return Imported_Data.IG.data.graphql.user.edge_followed_by.count
 }
+
+function Instagram_Post_Count() {
+    return Imported_Data.IG.data.graphql.user.edge_owner_to_timeline_media.count
+}
+
 
 
 
