@@ -3,7 +3,7 @@ $(document).ready(function(){
     
         /*==================================
 * Author        : "ThemeSINE"
-* Template Name : Zombiz HTML Template
+* Template Name : WFS Entrepreneurship HTML Template
 * Version       : 1.0
 ==================================== */
 
