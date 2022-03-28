@@ -212,12 +212,12 @@ html,body{
 .wrapper-sticky{
 	position: relative;
 	display: inline-block;
-	background: rgba(115,112,216,1);
+	background: rgb(38, 50, 56, 1);;
 }
 
 /* sticky */
 .sticky{
-	background: rgba(115,112,216,1);
+	background: rgb(38, 50, 56, 1);;
 	padding: 10px 0px 0px;
 	height:80px;
 	color: #fff;
@@ -414,7 +414,7 @@ html,body{
 	z-index:1;
 }
 .single-slide-item.slide-1:before,.single-slide-item.slide-2:before,.single-slide-item.slide-3:before,.single-slide-item.slide-4:before{
-	background:rgba(115,112,215,.6);
+	background:rgb(38, 50, 56, 0.4);
 	position:absolute;
 	left:0;
 	top:0;
