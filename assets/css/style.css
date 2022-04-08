@@ -237,7 +237,7 @@ html,body{
 .sticky .navbar-default .navbar-toggle:focus,
 .sticky .navbar-default .navbar-toggle:hover {
     background-color: transparent;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     margin-top: 15px;
 }/* sticky */
 
@@ -290,11 +290,11 @@ html,body{
 .navbar-default .navbar-toggle:focus,
  .navbar-default .navbar-toggle:hover {
     background-color: transparent;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     margin-top: 25px;
 }
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #000;
+    background-color: #fff;
 
 }/* navbar-toggle*/
 

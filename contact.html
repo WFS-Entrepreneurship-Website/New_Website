@@ -136,14 +136,14 @@
 		</section><!--/.about-part-->
 		<!--about-part end-->
 
-		<!--contact start-->
-		<section  class="contact">
+				<!--contact start-->
+		<section  class="contact" id="contact">
 			<div class="container">
 				<div class="contact-details">
 					<div class="section-header contact-head  text-center">
 						<h2>contact us</h2>
 						<p>
-							Pallamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+							Please feel free to reach out to us at any time, we are open to questions, concerns, and anything else!
 						</p>
 					</div><!--/.section-header-->
 					<div class="contact-content">
@@ -154,18 +154,22 @@
 										<div class="contact-adress">
 											<div class="contact-office-address">
 												<h3>contact info</h3>
-												<p>
-													125, Park street avenue, Brocklyn, Newyork.
+												<p id="contact_address">
+													898, Woodberry Forest Road<br> 22989 VA
 												</p>
 												<div class="contact-online-address">
 													<div class="single-online-address">
-														<i class="fa fa-phone"></i>
-														+11253678958
+														<a class="no_decor" href="tel:+1 (972)-730-2310">
+                                                            <i class="fa fa-phone"></i>
+                                                            +1 (972)-730-2310
+                                                        </a>
 													</div><!--/.single-online-address-->
 													
 													<div class="single-online-address">
-														<i class="fa fa-envelope-o"></i>
-														<span>info@mail.com</span>
+                                                        <a class="no_decor" href="mailto:wfs.entrepreneurship.leaders@gmail.com&cc=reed_graff@woodberry.org;ben_zhou@woodberry.org">
+                                                            <i class="fa fa-envelope-o"></i>
+                                                            <span>wfs.entrepreneurship.leaders@gmail.com</span>
+                                                        </a>
 													</div><!--/.single-online-address-->
 												</div><!--/.contact-online-address-->
 											</div><!--/.contact-office-address-->
@@ -174,9 +178,7 @@
 												<div class="contact-icon">
 													<ul>
 														<li><a href="https://www.instagram.com/wfsentrepreneurship"><i class="fa fa-instagram" aria-hidden="true"></i></a></li><!--/li-->
-																								<li><a href="https://www.instagram.com/wfsentrepreneurship"><i class="fa fa-instagram" aria-hidden="true"></i></a></li><!--/li-->
 														<li><a href="https://www.linkedin.com/groups/14078057/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><!--/li-->
-														
 													</ul><!--/ul-->
 												</div><!--/.contact-icon-->
 											</div><!--/.contact-office-address-->
@@ -188,7 +190,7 @@
 							<div class="col-sm-5">
 								<div class="single-contact-box">
 									<div class="contact-form">
-										<h3>Leave us a Massage Here</h3>
+										<h3>Leave Us A Message Here</h3>
 										<form>
 											<div class="row">
 												<div class="col-sm-6 col-xs-12">
@@ -224,7 +226,9 @@
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="single-contact-btn pull-right">
-														<button class="contact-btn" type="button">send message</button>
+														<button class="contact-btn" type="button" onclick="location.href='mailto:' + 'wfs.entrepreneurship.leaders@gmail.com?subject= Email from ' + document.getElementById('firstname').value + ' ' + document.getElementById('lastname').value + '&body=Dear WFS Entrepreneurship Club, ' + document.getElementById('comment').value + ' My contact info: ' + document.getElementById('phone').value + ', ' + document.getElementById('email').value + '&cc=reed_graff@woodberry.org;ben_zhou@woodberry.org'">
+                                                            send message
+                                                        </button>
 													</div><!--/.single-single-contact-btn-->
 												</div><!--/.col-->
 											</div><!--/.row-->
@@ -269,7 +273,7 @@
 		<section class="hm-footer">
 			<div class="container">
 				<div class="hm-footer-details">
-					<div class="footer_row">
+					<div class="row">
 						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="hm-footer-widget">
 								<div class="hm-foot-title ">
@@ -308,54 +312,51 @@
 								</div><!-- /.footer-menu-->
 							</div><!--/.hm-footer-widget-->
 						</div><!--/.col-->
-                        <!--
 						<div class=" col-md-3 col-sm-6 col-xs-12">
 							<div class="hm-footer-widget">
 								<div class="hm-foot-title">
 									<h4>from the news</h4>
-								</div>
+								</div><!--/.hm-foot-title-->
 								<div class="hm-para-news">
-									<a href="blog_single.html">
+									<a href="#">
 										The Pros and Cons of Starting an Online Business.
 									</a>
 									<span>12th June 2017</span>
-								</div>
+								</div><!--/.hm-para-news-->
 								<div class="footer-line">
 									<div class="border-bottom"></div>
 								</div>
 								<div class="hm-para-news">
-									<a href="blog_single.html">
+									<a href="#">
 										The Pros and Cons of Starting an Online Business.
 									</a>
 									<span>12th June 2017</span>
-								</div>
-							</div>
-						</div>
+								</div><!--/.hm-para-news-->
+							</div><!--/.hm-footer-widget-->
+						</div><!--/.col-->
 						<div class=" col-md-3 col-sm-6  col-xs-12">
 							<div class="hm-footer-widget">
-                                <div class="hm-foot-title">
-                                    <h4> Our Newsletter</h4>
-                                </div>
-                                <div class="hm-foot-para">
-                                    <p class="para-news">
-                                        Subscribe to our newsletter to get the latest News and offers..
-                                    </p>
-                                </div>
-                                <div class="hm-foot-email">
-                                    <div class="foot-email-box">
-                                        <input type="text" class="form-control" placeholder="Email Address">
-                                    </div>
-                                    <div class="foot-email-subscribe">
-                                        <button type="button" >go</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        -->
+								<div class="hm-foot-title">
+									<h4> Our Newsletter</h4>
+								</div><!--/.hm-foot-title-->
+								<div class="hm-foot-para">
+									<p class="para-news">
+										Subscribe to our newsletter to get the latest news and info from our club!
+									</p>
+								</div><!--/.hm-foot-para-->
+								<div class="hm-foot-email">
+									<div class="foot-email-box">
+										<input type="text" class="form-control" placeholder="Email Address">
+									</div><!--/.foot-email-box-->
+									<div class="foot-email-subscribe">
+										<button type="button" >go</button>
+									</div><!--/.foot-email-icon-->
+								</div><!--/.hm-foot-email-->
+							</div><!--/.hm-footer-widget-->
+						</div><!--/.col-->
 					</div><!--/.row-->
 				</div><!--/.hm-footer-details-->
 			</div><!--/.container-->
-
 		</section><!--/.hm-footer-details-->
 		<!--hm-footer end-->
 		
