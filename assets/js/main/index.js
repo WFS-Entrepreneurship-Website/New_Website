@@ -15,8 +15,9 @@ var Imported_Data = {
         "data": null
     },
     "IG": {
-        //"url": "../../php/proxy.php",
-        "url": "http://localhost:3000/assets/php/proxy.php",
+        //"url": "https://wfs-e.herokuapp.com/assets/php/proxy.php",
+        "url": "../php/proxy.php",
+        //"url": "http://localhost:3000/assets/php/proxy.php",
         "data": null
     }
 }
