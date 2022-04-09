@@ -47,6 +47,8 @@ class DumpHTTPRequestToFile {
 (new DumpHTTPRequestToFile)->execute('./dumprequest.txt');
 */
 
+
+/*
 class EchoDumpHTTPRequest {
 	public function execute() {
 		$data = sprintf(
@@ -94,4 +96,5 @@ class EchoDumpHTTPRequest {
 
 
 (new EchoDumpHTTPRequest)->execute();
+*/
 ?>
