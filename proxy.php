@@ -1,4 +1,5 @@
 <?php 
+    /*
     // URL
     $url = 'https://www.instagram.com/wfsentrepreneurship/?__a=1';
     
@@ -22,4 +23,5 @@
 
     $string = file_get_contents($url, false, $context);
     echo $string;
+    */
 ?>
